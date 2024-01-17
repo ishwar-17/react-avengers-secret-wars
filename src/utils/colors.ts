@@ -1,3 +1,4 @@
+// Common color for avatar.
 export const COLORS = [
     "#483C32",
     "#DE3163",
