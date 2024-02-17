@@ -29,6 +29,9 @@
     --errorBorder: rgb(255 0 0 / 22%);
     --greySecondaryBorder: rgb(103 106 108 / 22%);
 
+    --primaryHover60: rgb(111 0 255 / 60%);
+    --successHover60: rgb(0 165 80 / 60%);
+
     /* -----======= Gradient Colors =======------*/
     --primaryPurpleGradient: linear-gradient(90deg, hsla(295, 100%, 84%, 1) 0%, hsla(238, 100%, 71%, 1) 100%);
     --primaryGreenGradient: linear-gradient(90deg, hsla(145, 83%, 74%, 1) 0%, hsla(204, 77%, 76%, 1) 100%);
@@ -229,6 +232,7 @@
 
     /* -------======== line height =========--------*/
     --lineHeight20: 20px;
+    --lineHeight22: 22px;
 
     /* -------======== transisition duration =========--------*/
     --durations3s: 0.3s;

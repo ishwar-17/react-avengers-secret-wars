@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import Avatar, { AvatarProps } from '.';
 
 const meta = {
-  title: "Components/Avatar",
+  title: "Components/Avatars/Avatar",
   component: Avatar,
   tags: ["autodocs"],
 } satisfies Meta<typeof Avatar>;
