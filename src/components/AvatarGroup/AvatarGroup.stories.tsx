@@ -3,7 +3,7 @@ import AvatarGroup, { AvatarGroupProps } from '.';
 
 
 const meta = {
-  title: "Components/AvatarGroup",
+  title: "Components/Avatars/AvatarGroup",
   component: AvatarGroup,
   tags: ["autodocs"],
 } satisfies Meta<typeof AvatarGroup>;
