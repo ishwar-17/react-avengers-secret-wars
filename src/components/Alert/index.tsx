@@ -23,7 +23,7 @@ const Alert = ({
     "data-testid": dataTestId,
     color = "success",
     variant = "standard",
-    withRound =  true,
+    withRound = true,
     icon,
     size = "sm",
     title = "",
