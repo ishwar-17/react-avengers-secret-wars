@@ -94,19 +94,23 @@
 
 /*---------========== Icon size ===========------*/
 :global(.MuiChip-root).chipMui.chip-small svg:first-child{
-  font-size: var(--padding16);
+  width: var(--width16);
+  height: var(--height16);
 }
 
 :global(.MuiChip-root).chipMui.chip-medium svg:first-child{
-  font-size: var(--padding18);
+  width: var(--width18);
+  height: var(--height18);
 }
 
 :global(.MuiChip-root).chipMui.chip-small :global(.MuiChip-deleteIcon){
-  font-size: var(--padding12);
+  width: var(--width12);
+  height: var(--height12);
 }
 
 :global(.MuiChip-root).chipMui.chip-medium :global(.MuiChip-deleteIcon){
-  font-size: var(--padding14);
+  width: var(--width14);
+  height: var(--height14);
 }
 
 :global(.MuiChip-root).chipMui.chip-normal{

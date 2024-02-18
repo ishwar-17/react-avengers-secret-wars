@@ -58,6 +58,18 @@ const storiesArgTypes = {
       },
       options: ["normal", "rounded", "pill"],
     },
+    passwordLength: {
+      name: "passwordLength",
+      control: {
+        type: "radio",
+        labels: {
+          8: "Minimum 8",
+          10: "Minimum 10",
+          12: "Minimum 12"
+        },
+      },
+      options: [8, 10, 12],
+    },
   }
 };
 

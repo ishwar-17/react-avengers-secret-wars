@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import IconButton, { IconButtonProps } from '.';
-import { Delete } from '../../Icons';
+import { Trash2 } from '../../Icons';
 
 const meta = {
     title: "Components/Buttons/IconButton",
@@ -69,7 +69,7 @@ export const Default: Story = {
       size:"sm",
       color: "primary",
       variant: "filled",
-      children: <Delete />,
+      children: <Trash2 />,
       disabled: false,
     },
     ...storiesArgTypes

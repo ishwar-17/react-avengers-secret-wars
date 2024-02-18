@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Drawer, { DrawerProps } from '.';
 import Button from '../Buttons/Button';
 import IconButton from '../Buttons/IconButton';
-import { ModeEditOutline, Delete, Visibility} from '../Icons';
+import { Edit2, Trash2, Eye } from '../Icons';
 
 const meta = {
   title: "Components/Drawer",
@@ -72,21 +72,21 @@ export const Default: Story = {
                     color="secondary"
                     variant="outlined"
                 >
-                    <Visibility />
+                    <Eye />
                 </IconButton>
                 <IconButton
                     size="sm"
                     color="secondary"
                     variant="outlined"
                 >
-                    <ModeEditOutline />
+                    <Edit2 />
                 </IconButton>
                 <IconButton
                     size="sm"
                     color="secondary"
                     variant="outlined"
                 >
-                    <Delete />
+                    <Trash2 />
                 </IconButton>
             </>
         ),

@@ -1,1 +1,1 @@
-export * from '@mui/icons-material';
+export * from 'react-feather';

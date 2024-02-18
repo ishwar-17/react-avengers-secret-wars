@@ -1,7 +1,7 @@
 import { Alert as AlertMUI, AlertTitle } from '@mui/material';
 import classNames from 'classnames';
 import { ReactNode } from 'react';
-import { TaskAltOutlined, InfoOutlined, ErrorOutlineOutlined, WarningAmberOutlined } from '../Icons';
+import { AlertCircle, AlertTriangle, CheckCircle, Info } from '../Icons';
 import styles from './index.module.css';
 
 export type AlertProps = {
@@ -32,10 +32,10 @@ const Alert = ({
     ...rest
 }: AlertProps) => {
     const colorWithIcon = {
-        success: <TaskAltOutlined />,
-        info: <InfoOutlined />,
-        error: <ErrorOutlineOutlined />,
-        warning: <WarningAmberOutlined />
+        success: <CheckCircle />,
+        info: <Info />,
+        error: <AlertCircle />,
+        warning: <AlertTriangle />
     };
 
     const iconRender = (key: string): JSX.Element => {
