@@ -32,6 +32,21 @@
     --primaryHover60: rgb(111 0 255 / 60%);
     --successHover60: rgb(0 165 80 / 60%);
 
+    --neutral50: #f9fafb;
+    --neutral100: #f2f4f7;
+    --neutral200: #d0d5dd;
+    --neutral300: #98a2b3;
+    --neutral400: #667085;
+    --neutral500: #344054;
+    --neutral600: #101828;
+
+
+    --error600: #cb1e1d;
+
+
+    --green-bright: #00d407;
+    --green-light: #63ca81;
+
     /* -----======= Gradient Colors =======------*/
     --primaryPurpleGradient: linear-gradient(90deg, hsla(295, 100%, 84%, 1) 0%, hsla(238, 100%, 71%, 1) 100%);
     --primaryGreenGradient: linear-gradient(90deg, hsla(145, 83%, 74%, 1) 0%, hsla(204, 77%, 76%, 1) 100%);
@@ -133,6 +148,7 @@
     --borderWidth2: 2px;
 
     /*-------========= width ==========---------*/
+    --width8: 8px;
     --width10: 10px;
     --width12: 12px;
     --width14: 14px;
@@ -177,6 +193,7 @@
     --fullWidth: 100%;
 
     /*-------========= height ==========---------*/
+    --height8: 8px;
     --height10: 10px;
     --height12: 12px;
     --height18: 18px;
