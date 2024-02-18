@@ -11,7 +11,6 @@ export enum PASSWORD_LENGTH {
     "MAX_12" = 12,
 }
 
-
 export enum PASSWORD_REQUIREMENT_KEYS {
     MINIMUM_8_CHARACTERS = 'minimum_8_characters',
     MINIMUM_10_CHARACTERS = 'minimum_10_characters',
