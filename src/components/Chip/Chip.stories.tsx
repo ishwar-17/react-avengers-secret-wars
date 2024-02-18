@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Face } from '../Icons';
+import { Smile } from '../Icons';
 import Chip, { ChipProps } from '.';
 
 
@@ -67,7 +67,7 @@ export const Default: Story = {
     render: StoryContainer,
     args: {
         label: "Expense Manager",
-        icon: <Face />,
+        icon: <Smile />,
         variant: "outlined",
         color: "primary",
         withRound: true,

@@ -29,7 +29,8 @@
 
 .textfield-success-endadornment > svg,
 .textfield-error-endadornment > svg{
-    font-size: var(--fontSize18);
+    width: var(--width18);
+    height: var(--height18);
 }
 
 .textfield-success-endadornment > svg{

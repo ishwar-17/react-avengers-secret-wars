@@ -123,13 +123,16 @@
 }
 
 :global(.MuiIconButton-root).iconButtonMui.iconbutton-sm > svg{
-    font-size: var(--fontSize16);
+    width: var(--width16);
+    height: var(--height16);
 }
 
 :global(.MuiIconButton-root).iconButtonMui.iconbutton-md > svg{
-    font-size: var(--fontSize24);
+    width: var(--width24);
+    height: var(--height24);
 }
 
 :global(.MuiIconButton-root).iconButtonMui.iconbutton-lg > svg{
-    font-size: var(--fontSize28);
+    width: var(--width28);
+    height: var(--height28);
 }

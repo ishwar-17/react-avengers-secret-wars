@@ -1,4 +1,4 @@
-import { ErrorOutline, Check } from '../../Icons';
+import { AlertCircle, Check } from '../../Icons';
 import {
     FilledInputProps,
     OutlinedInputProps,
@@ -110,7 +110,7 @@ const TextField = forwardRef<FieldRef, TextFieldProps>((props: TextFieldProps, r
                 )}
                 {error && !hideErrorIcon && (
                     <InputAdornment position='end' className={styles['textfield-error-endadornment']}>
-                        <ErrorOutline />
+                        <AlertCircle />
                     </InputAdornment>
                 )}
                 {success && !hideSuccessIcon && (
