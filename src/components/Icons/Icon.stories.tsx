@@ -5,7 +5,7 @@ import {
   Percent,
   PieChart,
   TrendingUp,
-  ArrowForward
+  ArrowRight
 } from "./";
 
 const Icons = () => {
@@ -14,7 +14,7 @@ const Icons = () => {
       <CreditCard />
       <PieChart />
       <TrendingUp />
-      <ArrowForward />
+      <ArrowRight />
       <Percent />
       <p>
         Visit

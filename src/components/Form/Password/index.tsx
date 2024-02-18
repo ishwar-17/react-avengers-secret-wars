@@ -1,14 +1,14 @@
 import { ChangeEvent, useMemo, useState } from 'react';
 import { Grid } from '@mui/material';
 import { TextField, TextFieldProps } from '..';
-import { Check, Circle, VisibilityOutlined, VisibilityOffOutlined } from '../../Icons';
+import { Check, Circle, Eye, EyeOff } from '../../Icons';
 import classNames from 'classnames';
 import styles from './index.module.css';
 
 export enum PASSWORD_LENGTH {
-    "MAX_8" = 8,
-    "MAX_10" = 10,
-    "MAX_12" = 12,
+    MIN_8 = 8,
+    MIN_10 = 10,
+    MIN_12 = 12,
 }
 
 export enum PASSWORD_REQUIREMENT_KEYS {
@@ -47,17 +47,17 @@ export interface PasswordFieldProps extends TextFieldProps {
 
 export const PASSWORD_REQUIREMENTS = (passwordLength: number) => {
     const requirements = {
-        ...(passwordLength === PASSWORD_LENGTH.MAX_8 && {
+        ...(passwordLength === PASSWORD_LENGTH.MIN_8 && {
             [PASSWORD_REQUIREMENT_KEYS.MINIMUM_8_CHARACTERS]: {
                 validator: (password: string) => /^.{8,}$/.test(password),
             }
         }),
-        ...(passwordLength === PASSWORD_LENGTH.MAX_10 && {
+        ...(passwordLength === PASSWORD_LENGTH.MIN_10 && {
             [PASSWORD_REQUIREMENT_KEYS.MINIMUM_10_CHARACTERS]: {
                 validator: (password: string) => /^.{10,}$/.test(password),
             }
         }),
-        ...(passwordLength === PASSWORD_LENGTH.MAX_12 && {
+        ...(passwordLength === PASSWORD_LENGTH.MIN_12 && {
             [PASSWORD_REQUIREMENT_KEYS.MINIMUM_12_CHARACTERS]: {
                 validator: (password: string) => /^.{12,}$/.test(password),
             }
@@ -115,7 +115,7 @@ const PasswordField = ({
     disabled,
     passwordValue,
     enablePreview = true,
-    passwordLength = 12,
+    passwordLength = PASSWORD_LENGTH.MIN_12,
     passwordRequirementLabels,
     showPasswordRequirements,
     onChange,
@@ -126,7 +126,7 @@ const PasswordField = ({
     const [password, setPassword] = useState<string>(passwordValue ?? '');
     const [showPassword, setShowPassword] = useState(false);
     const passwordIconClass = classNames(!disabled && styles.showPasswordIcon);
-    const EyeIcon = showPassword ? VisibilityOffOutlined : VisibilityOutlined;
+    const EyeIcon = showPassword ? EyeOff : Eye;
     const fieldType = showPassword ? 'text' : 'password';
 
     const onPasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
