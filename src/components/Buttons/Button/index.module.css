@@ -208,15 +208,18 @@
 
 :global(.MuiButton-root).buttonMui.button-sm :global(.MuiButton-startIcon) svg,
 :global(.MuiButton-root).buttonMui.button-sm :global(.MuiButton-endIcon) svg{
-    font-size: var(--fontSize14);
+    width: var(--width14);
+    height: var(--height14);
 }
 
 :global(.MuiButton-root).buttonMui.button-md :global(.MuiButton-startIcon) svg,
 :global(.MuiButton-root).buttonMui.button-md :global(.MuiButton-endIcon) svg{
-    font-size: var(--fontSize16);
+    width: var(--width16);
+    height: var(--height16);
 }
 
 :global(.MuiButton-root).buttonMui.button-lg :global(.MuiButton-startIcon) svg,
 :global(.MuiButton-root).buttonMui.button-lg :global(.MuiButton-endIcon) svg{
-    font-size: var(--fontSize18);
+    width: var(--width18);
+    height: var(--height18);
 }

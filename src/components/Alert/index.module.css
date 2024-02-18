@@ -24,11 +24,13 @@
 }
 
 :global(.MuiAlert-root).alertMui.alert-sm :global(.MuiAlert-icon) svg{
-    font-size: var(--fontSize16);
+    width: var(--width16);
+    height: var(--height16);
 }
 
 :global(.MuiAlert-root).alertMui.alert-sm :global(.MuiAlert-action) button svg{
-    font-size: var(--fontSize16);
+    width: var(--width16);
+    height: var(--height16);
 }
 
 :global(.MuiAlert-root).alertMui.alert-md{
@@ -46,7 +48,8 @@
 }
 
 :global(.MuiAlert-root).alertMui.alert-md :global(.MuiAlert-icon) svg{
-    font-size: var(--fontSize20);
+    width: var(--width20);
+    height: var(--height20);
 }
 
 :global(.MuiAlert-root).alertMui :global(.MuiAlert-action){

@@ -43,14 +43,14 @@
     text-decoration: line-through;
 }
 
-.passwordField__check:global(.MuiSvgIcon-root){
+.passwordField__check{
     min-width: var(--width12);
     width: var(--width12);
     height: var(--height12);
     color: var(--green-bright);
 }
 
-.passwordField__circle:global(.MuiSvgIcon-root){
+.passwordField__circle{
     width: var(--width8);
     height: var(--height8);
     color: var(--neutral300);

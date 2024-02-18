@@ -2,7 +2,7 @@ import { Drawer as DrawerMUI } from '@mui/material';
 import classNames from 'classnames';
 import { ReactNode } from 'react';
 import IconButton from '../Buttons/IconButton';
-import { ArrowBack, Close} from '../Icons';
+import { ArrowLeft, X as Close} from '../Icons';
 import styles from './index.module.css';
 
 export type DrawerProps = {
@@ -36,7 +36,7 @@ const Drawer = ({
         >
             <div className={styles.drawerTitle}>
                 { onBackClick ? (
-                    <ArrowBack className={styles.backArrow} onClick={onBackClick} />
+                    <ArrowLeft className={styles.backArrow} onClick={onBackClick} />
                 ):(
                     <IconButton 
                         variant='filled'
