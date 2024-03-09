@@ -150,7 +150,7 @@ const PasswordField = ({
         )
     };
 
-    const passwordRequirements  =  useMemo(() => {
+    const passwordRequirements = useMemo(() => {
         if(showPasswordRequirements){
             return Object.entries(
                 PASSWORD_REQUIREMENTS(passwordLength)

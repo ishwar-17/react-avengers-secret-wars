@@ -146,6 +146,10 @@
   color: var(--warning);
 }
 
+:global(.MuiButtonBase-root) :global(.MuiChip-deleteIcon){
+  margin: 0 2px 0 5px;
+}
+
 
 
 
