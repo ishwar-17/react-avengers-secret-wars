@@ -1,0 +1,5 @@
+{
+    "name": "@avengers-secret-wars/avengers-secret-wars",
+    "version": "0.1.0",
+    "exports": "./mod.ts"
+}
