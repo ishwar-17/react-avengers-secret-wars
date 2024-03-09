@@ -66,7 +66,7 @@ const storiesArgTypes = {
 export const Default: Story = {
     render: StoryContainer,
     args: {
-        label: "Expense Manager",
+        label: "New Arrival",
         icon: <Smile />,
         variant: "outlined",
         color: "primary",
