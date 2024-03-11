@@ -19,6 +19,7 @@
     --errorHover: rgb(255 0 0 / 12%);
 
     --backgroundTransparent: transparent;
+    --offWhiteBg: rgba(0, 0, 0, 0.06);
 
     --primaryBorder: rgb(111 0 255 / 22%);
     --secondaryBorder: rgb(161 159 154 / 22%);
@@ -107,6 +108,21 @@
     --padding26: 26px;
     --padding28: 28px;
     --padding30: 30px;
+    --padding32: 32px;
+    --padding34: 34px;
+    --padding36: 36px;
+    --padding38: 38px;
+    --padding40: 40px;
+    --padding42: 42px;
+    --padding44: 44px;
+    --padding46: 46px;
+    --padding48: 48px;
+    --padding50: 50px;
+    --padding52: 52px;
+    --padding54: 54px;
+    --padding56: 56px;
+    --padding58: 58px;
+    --padding60: 60px;
 
     /* -------======== margin =========--------*/
     --margin0: 0;
@@ -126,9 +142,25 @@
     --margin26: 26px;
     --margin28: 28px;
     --margin30: 30px;
+    --margin32: 32px;
+    --margin34: 34px;
+    --margin36: 36px;
+    --margin38: 38px;
+    --margin40: 40px;
+    --margin42: 42px;
+    --margin44: 44px;
+    --margin46: 46px;
+    --margin48: 48px;
+    --margin50: 50px;
+    --margin52: 52px;
+    --margin54: 54px;
+    --margin56: 56px;
+    --margin58: 58px;
+    --margin60: 60px;
 
     /* -------======== border-radius =========--------*/
     --borderRadius4: 4px;
+    --borderRadius6: 6px;
     --borderRadius8: 8px;
     --borderRadius10: 10px;
     --borderRadius12: 12px;
