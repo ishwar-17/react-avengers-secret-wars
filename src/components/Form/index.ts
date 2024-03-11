@@ -5,4 +5,5 @@ export { default as Switch } from './Switch';
 export type { SwitchProps } from './Switch';
 export { default as TextField } from './TextField';
 export type { FieldBaseProps, TextFieldProps } from './TextField';
-
+export { default as TextArea } from './TextArea';
+export type { TextAreaProps } from './TextArea';

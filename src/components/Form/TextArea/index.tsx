@@ -9,7 +9,7 @@ import {
 import { AlertCircle, Check } from "../../Icons";
 import styles from './index.module.css';
 
-export interface FieldBaseProps {
+interface FieldBaseProps {
     error?: boolean;
     success?: boolean;
     helperText?: string;
