@@ -5,6 +5,9 @@ import { Trash2 } from '../../Icons';
 const meta = {
     title: "Components/Buttons/IconButton",
     component: IconButton,
+    parameters: {
+      layout: 'centered',
+    },
     tags: ["autodocs"],
 } satisfies Meta<typeof IconButton>;
   

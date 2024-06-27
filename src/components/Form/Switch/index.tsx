@@ -1,5 +1,7 @@
 import { Switch as SwitchMUI, FormControlLabel } from '@mui/material';
+import classNames from 'classnames';
 import { ChangeEvent, ReactNode, ComponentProps } from 'react';
+import styles from './index.module.css';
 
 type SwitchMuiProps = Partial<Omit<ComponentProps<typeof SwitchMUI>, "color" | "size">>;
 
@@ -13,7 +15,7 @@ export type SwitchProps = SwitchMuiProps & {
     name: string;
     checked: boolean;
     disableRipple: boolean;
-    color: 'primary' | 'secondary' | 'success';
+    color: 'primary' | 'secondary' | 'success' | 'warning';
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
     disabled?: boolean;
@@ -24,7 +26,7 @@ export type SwitchProps = SwitchMuiProps & {
     "data-testid"?: string;
 }
 
-const SwitchComponent = ({
+const Switch = ({
     className,
     id,
     name,
@@ -39,12 +41,10 @@ const SwitchComponent = ({
     "data-testid": dataTestId
 }: SwitchProps) => {
     const commonSwitchProps = {
-        className,
         id,
         name,
         checked,
         disableRipple,
-        color,
         onChange,
         inputProps,
         "data-testid": dataTestId
@@ -53,7 +53,17 @@ const SwitchComponent = ({
     if (label) {
         return (
             <FormControlLabel
-                control={<SwitchMUI {...commonSwitchProps} />}
+                control={
+                    <SwitchMUI
+                        {...commonSwitchProps}
+                        className={classNames(
+                            styles.switchContainer,
+                            styles[`switch-bg-${color}`],
+                            className
+                        )}
+                    />
+                }
+                className={styles.switchControlLabel}
                 required={required}
                 disabled={disabled}
                 data-testid={`form-control-${dataTestId}`}
@@ -65,10 +75,15 @@ const SwitchComponent = ({
     return (
         <SwitchMUI
             {...commonSwitchProps}
+            className={classNames(
+                styles.switchContainer,
+                styles[`switch-bg-${color}`],
+                className
+            )}
             required={required}
             disabled={disabled}
         />
     );
 };
 
-export default SwitchComponent;
+export default Switch;

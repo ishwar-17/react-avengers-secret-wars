@@ -6,6 +6,9 @@ import Button from '../Buttons/Button';
 const meta = {
   title: "Components/Alert",
   component: Alert,
+  parameters: {
+    layout: 'centered',
+  },
   tags: ["autodocs"],
 } satisfies Meta<typeof Alert>;
 
