@@ -38,12 +38,4 @@ export default defineConfig({
       },
     },
   },
-  css: {
-    modules: {
-      generateScopedName: (name, file) => {
-        const componentName = path.basename(path.dirname(file));
-        return `avengers-${componentName.toLowerCase()}--${name}`;
-      },
-    },
-  },
 });

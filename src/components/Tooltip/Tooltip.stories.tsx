@@ -8,6 +8,9 @@ import styles from './index.module.css';
 const meta = {
   title: "Components/Tooltip",
   component: Tooltip,
+  parameters: {
+    layout: 'centered',
+  },
   tags: ["autodocs"],
 } satisfies Meta<typeof Tooltip>;
 

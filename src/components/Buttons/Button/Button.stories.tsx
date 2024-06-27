@@ -5,6 +5,9 @@ import { ArrowLeft, ArrowRight } from '../../Icons';
 const meta = {
   title: "Components/Buttons/Button",
   component: Button,
+  parameters: {
+    layout: 'centered',
+  },
   tags: ["autodocs"],
 } satisfies Meta<typeof Button>;
 
