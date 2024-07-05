@@ -7,3 +7,5 @@ export { default as TextField } from './TextField';
 export type { FieldBaseProps, TextFieldProps } from './TextField';
 export { default as TextArea } from './TextArea';
 export type { TextAreaProps } from './TextArea';
+export { default as Radio } from './Radio';
+export type { RadioProps } from './Radio';
