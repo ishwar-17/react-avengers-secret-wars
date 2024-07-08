@@ -9,7 +9,7 @@ on:
       - master
 jobs:
   publish:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Clean
         run: sudo rm -rf $PWD/* $PWD/.[!.]*
