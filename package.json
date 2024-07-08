@@ -1,7 +1,10 @@
 {
-  "name": "avengers-secret-wars",
-  "private": true,
+  "name": "@ishwar-17/avengers-secret-wars",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ishwar-17/avengers-secret-wars.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -57,5 +60,8 @@
     "@semantic-release/github",
     "@semantic-release/npm",
     "@semantic-release/git"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
