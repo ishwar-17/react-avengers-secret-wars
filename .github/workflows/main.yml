@@ -26,7 +26,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
       - name: Authenticate with npm Registry
-        run: npm config set '//npm.pkg.github.com/:_authToken' ${{ secrets.NPM_TOKEN }}
+        run: npm config set '//npm.pkg.github.com/:_authToken' ${{ secrets.GH_TOKEN }}
 
       - name: Publish to npm Registry
         run: npm publish --registry=https://npm.pkg.github.com
