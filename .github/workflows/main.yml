@@ -23,6 +23,7 @@ jobs:
       - name: Semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
       - name: Authenticate with npm Registry
         run: npm config set '//npm.pkg.github.com/:_authToken' ${{ secrets.NPM_TOKEN }}
@@ -30,4 +31,8 @@ jobs:
       - name: Publish to npm Registry
         run: npm publish --registry=https://npm.pkg.github.com
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish to npm
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # Ensure you have set NPM_AUTH_TOKEN in repository secrets
+      #   run: npm publish
