@@ -8,4 +8,4 @@ export type { FieldBaseProps, TextFieldProps } from './TextField';
 export { default as TextArea } from './TextArea';
 export type { TextAreaProps } from './TextArea';
 export { default as RadioField } from './Radio';
-export type { RadioFieldProps } from './Radio';
+export type { RadioProps } from './Radio';
