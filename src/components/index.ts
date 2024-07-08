@@ -11,7 +11,7 @@ export { default as Chip } from './Chip';
 export type { ChipProps } from './Chip';
 export { default as Drawer } from './Drawer';
 export type { DrawerProps } from './Drawer';
-export * from './Form';
 export * from './Icons';
+export * from './Form';
 export { default as Tooltip } from './Tooltip';
 export type { TooltipProps } from './Tooltip';

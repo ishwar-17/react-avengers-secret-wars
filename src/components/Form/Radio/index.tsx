@@ -15,7 +15,7 @@ type RadioOptions = {
     disabled?: boolean;
 }
 
-export type RadioProps = {
+export type RadioFieldProps = {
     className?: string;
     horizontal?: boolean;
     id: string;
@@ -28,7 +28,7 @@ export type RadioProps = {
     "data-testid"?: string;
 }
 
-const Radio = ({
+const RadioField = ({
     className,
     horizontal = false,
     id,
@@ -39,7 +39,7 @@ const Radio = ({
     value = '',
     onChange,
     "data-testid": dataTestId
-}: RadioProps) => {
+}: RadioFieldProps) => {
     return (
         <FormControl className={styles.radioFormControl}>
             {label && (<FormLabel className={styles.radioLabel} id={id} data-testid={`radio-label-${dataTestId}`}>{label}</FormLabel>)}
@@ -69,5 +69,5 @@ const Radio = ({
     );
 };
 
-export default Radio;  
+export default RadioField;  
 
