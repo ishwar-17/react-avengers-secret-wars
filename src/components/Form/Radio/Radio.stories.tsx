@@ -1,20 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import Radio, { RadioProps } from '.';
+import RadioField, { RadioFieldProps } from '.';
 
 const meta = {
-    title: "Components/Form/Radio",
-    component: Radio,
+    title: "Components/Form/RadioField",
+    component: RadioField,
     tags: ["autodocs"],
-} satisfies Meta<typeof Radio>;
+} satisfies Meta<typeof RadioField>;
   
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const StoryContainer = (props: RadioProps) => {
+const StoryContainer = (props: RadioFieldProps) => {
     const [selectedValue, setSelectedValue] = useState('');
     return (
-      <Radio
+      <RadioField
         {...props}
         value={selectedValue || props.value}
         onChange={(e) => setSelectedValue(e.target.value)}
