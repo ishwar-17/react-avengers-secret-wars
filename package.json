@@ -39,6 +39,7 @@
     "eslint-plugin-storybook": "^0.6.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "semantic-release": "^24.0.0",
     "storybook": "^7.6.16",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
@@ -48,5 +49,13 @@
     "classnames": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ]
 }
