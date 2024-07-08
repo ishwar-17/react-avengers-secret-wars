@@ -8,30 +8,53 @@ on:
     branches:
       - master
 jobs:
-  publish:
-    runs-on: ubuntu-latest
+  relase:
+    runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Clean
+        run: sudo rm -rf $PWD/* $PWD/.[!.]*
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Use Node 20.8.1
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 20.8.1
+          registry-url: https://npm.pkg.github.com
+          scope: "@ishwar-17"
       - name: Install dependencies
-        run: npm install 
-      - name: Build app
-        run: npm run build   
+        run: | 
+          npm ci 
+      - name: Build
+        run: |
+          npm run build
+      # - name: Authenticate with npm Registry
+      #   run: npm config set '//npm.pkg.github.com/:_authToken' ${{ secrets.GH_TOKEN }}
+      - name: Publish package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm publish
       - name: Semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
-      - name: Authenticate with npm Registry
-        run: npm config set '//npm.pkg.github.com/:_authToken' ${{ secrets.GH_TOKEN }}
-
-      - name: Publish to npm Registry
-        run: npm publish --registry=https://npm.pkg.github.com
+      - name: get version
+        id: version
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: "package.json"
+          prop_path: "version"
+      - run: |
+          echo "PACKAGE_VERSION=${{steps.version.outputs.prop}}" >> $GITHUB_ENV
+      - uses: avakar/tag-and-release@v1
+        with:
+          tag_name: ${{steps.version.outputs.prop}}
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      
+
+     
       # - name: Publish to npm
       #   env:
       #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # Ensure you have set NPM_AUTH_TOKEN in repository secrets
