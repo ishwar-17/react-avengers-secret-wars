@@ -1,9 +1,9 @@
 {
-  "name": "@ishwar-17/avengers-secret-wars",
+  "name": "@ishwar-17/react-avengers-secret-wars",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ishwar-17/avengers-secret-wars.git"
+    "url": "https://github.com/ishwar-17/react-avengers-secret-wars.git"
   },
   "type": "module",
   "scripts": {
