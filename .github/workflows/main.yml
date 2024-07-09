@@ -33,7 +33,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm publish
+          npm publish --access public
       - name: Semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -52,4 +52,3 @@ jobs:
           tag_name: ${{steps.version.outputs.prop}}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          
