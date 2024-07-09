@@ -28,7 +28,7 @@ jobs:
         run: |
           npm run build
       - name: Authenticate with npm Registry
-        run: npm config set registry https://registry.npmjs.org/
+        run: npm config set '//npm.pkg.github.com/:_authToken' ${{ secrets.GH_TOKEN }}
       - name: Publish package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
