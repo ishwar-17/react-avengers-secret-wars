@@ -19,8 +19,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.8.1
-          registry-url: https://npm.pkg.github.com
-          scope: "@ishwar-17"
+          registry-url: "https://registry.npmjs.org"
+          scope: "@ishwar"
       - name: Install dependencies
         run: | 
           npm ci 
@@ -28,7 +28,7 @@ jobs:
         run: |
           npm run build
       - name: Authenticate with npm Registry
-        run: npm config set '//npm.pkg.github.com/:_authToken' ${{ secrets.GH_TOKEN }}
+        run: npm config set '//registry.npmjs.org/:_authToken' ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Publish package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
