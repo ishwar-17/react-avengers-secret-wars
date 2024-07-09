@@ -1,6 +1,10 @@
 {
   "name": "@ishwar-17/react-avengers-secret-wars",
-  "version": "2.0.8",
+  "version": "2.0.9",
+  "main": "dist/index.ts",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ishwar-17/react-avengers-secret-wars.git"
