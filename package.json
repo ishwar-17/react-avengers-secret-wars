@@ -1,10 +1,17 @@
 {
   "name": "@ishwar-17/react-avengers-secret-wars",
-  "version": "2.0.3",
+  "version": "2.0.6",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ishwar-17/react-avengers-secret-wars.git"
+    "url": "git+https://github.com/ishwar-17/react-avengers-secret-wars.git"
   },
+  "keywords": [],
+  "author": "Ishwar Deoolkar",
+  "license": "MIT License",
+  "bugs": {
+    "url": "https://github.com/ishwar-17/react-avengers-secret-wars/issues"
+  },
+  "homepage": "https://github.com/ishwar-17/react-avengers-secret-wars#readme",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -72,8 +79,5 @@
       "@semantic-release/github",
       "@semantic-release/git"
     ]
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
 }
