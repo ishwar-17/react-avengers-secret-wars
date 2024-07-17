@@ -1,0 +1,6 @@
+.git/
+.github/
+.storybook/
+.storybook-static/
+*.stories.tsx
+.eslintrc.cjs
