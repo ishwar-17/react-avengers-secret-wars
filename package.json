@@ -1,10 +1,20 @@
 {
   "name": "@ishwar/react-avengers-secret-wars",
-  "version": "2.0.11",
-  "main": "dist/index.ts",
+  "version": "2.0.12",
+  "type": "module",
   "files": [
     "dist"
   ],
+  "main": "./dist/avengers-secret-wars.umd.js",
+  "module": "./dist/avengers-secret-wars.es.js",
+  "types": "./dist/index.d.ts",
+  "export": {
+    ".": {
+      "import": "./dist/avengers-secret-wars.es.js",
+      "require": "./dist/avengers-secret-wars.umd.js"
+    },
+    ".style": "./dist/style.css"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ishwar-17/react-avengers-secret-wars.git"
@@ -16,7 +26,6 @@
     "url": "https://github.com/ishwar-17/react-avengers-secret-wars/issues"
   },
   "homepage": "https://github.com/ishwar-17/react-avengers-secret-wars#readme",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
