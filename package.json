@@ -1,6 +1,6 @@
 {
   "name": "@ishwar/react-avengers-secret-wars",
-  "version": "2.0.17",
+  "version": "2.0.18",
   "type": "module",
   "files": [
     "dist"
@@ -43,6 +43,7 @@
     "vite-plugin-static-copy": "^0.17.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.9",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/git": "^10.0.1",
@@ -61,6 +62,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "babel-loader": "^9.1.3",
     "classnames": "^2.3.2",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
