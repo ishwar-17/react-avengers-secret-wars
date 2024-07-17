@@ -23,9 +23,9 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: "Aveners-Secret-Wars",
+      name: "React-Avengers-Secret-Wars",
       formats: ["es", "umd"],
-      fileName: (format) => `avengers-secret-wars.${format}.js`,
+      fileName: (format) => `react-avengers-secret-wars.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],
