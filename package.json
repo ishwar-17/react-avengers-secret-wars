@@ -1,6 +1,6 @@
 {
   "name": "@ishwar/react-avengers-secret-wars",
-  "version": "2.0.19",
+  "version": "2.0.20",
   "type": "module",
   "files": [
     "dist"
