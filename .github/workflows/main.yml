@@ -41,7 +41,7 @@ jobs:
       - name: Publish to GitHub Packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npm publish --registry=https://npm.pkg.github.com --scope=@ishwar
+        run: npm publish --registry=https://npm.pkg.github.com --scope=@ishwar-17
 
       - name: Publish to npm
         env:
