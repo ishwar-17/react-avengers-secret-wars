@@ -25,7 +25,7 @@ jobs:
 
       - name: Configure .npmrc for both GitHub Packages and npm
         run: |
-          echo "@ishwar-17:registry=https://npm.pkg.github.com/" > ~/.npmrc
+          echo "@ishwar:registry=https://npm.pkg.github.com/" > ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}" >> ~/.npmrc
           echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> ~/.npmrc
