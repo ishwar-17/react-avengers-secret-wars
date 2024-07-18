@@ -41,12 +41,12 @@ jobs:
       - name: Publish to GitHub Packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npm publish --registry=https://npm.pkg.github.com --scope=@ishwar-17
+        run: npm publish
 
       - name: Publish to npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: npm publish --registry=https://registry.npmjs.org/
+        run: npm publish
       # - name: Authenticate with npm Registry
       #   run: npm config set '//npm.pkg.github.com/:_authToken' ${{ secrets.GH_TOKEN }}
       # - name: Semantic release
