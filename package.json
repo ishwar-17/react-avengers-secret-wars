@@ -1,6 +1,6 @@
 {
   "name": "@ishwar/react-avengers-secret-wars",
-  "version": "2.0.20",
+  "version": "2.0.21",
   "type": "module",
   "files": [
     "dist"
@@ -18,6 +18,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ishwar-17/react-avengers-secret-wars.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [],
   "author": "Ishwar Deoolkar",
