@@ -19,8 +19,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.8.1
-        #   registry-url: "https://registry.npmjs.org"
-        #   scope: "@ishwar"
+          registry-url: "https://registry.npmjs.org"
+          scope: "@ishwar"
       - name: Install dependencies
         run: | 
           npm ci 
