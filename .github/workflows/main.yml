@@ -28,9 +28,9 @@ jobs:
       - name: Configure npm to use GitHub Packages and npm registry
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_TOKEN }}" > ~/.npmrc
-          # echo "@ishwar-17:registry=https://npm.pkg.github.com/" >> ~/.npmrc
-          # echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
-          # echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          echo "@ishwar-17:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
       
       - name: Install Dependencies
         run: npm ci
