@@ -31,9 +31,13 @@ jobs:
           echo "@ishwar-17:registry=https://npm.pkg.github.com/" >> ~/.npmrc
           echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          cat ~/.npmrc  # Output the .npmrc file for debugging
       
       - name: Install Dependencies
         run: npm ci
+
+      - name: Verify .npmrc file content
+        run: cat ~/.npmrc
       
       - name: Build
         run: npm run build
