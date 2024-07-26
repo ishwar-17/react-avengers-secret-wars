@@ -19,9 +19,6 @@
     "type": "git",
     "url": "git+https://github.com/ishwar-17/react-avengers-secret-wars.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "keywords": [],
   "author": "Ishwar Deoolkar",
   "license": "MIT License",
