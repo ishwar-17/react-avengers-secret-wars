@@ -31,7 +31,7 @@ jobs:
       - name: Configure npm to use GitHub Packages
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_TOKEN }}" > ~/.npmrc
-          echo "@ishwar:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+          echo "@ishwar-17:registry=https://npm.pkg.github.com/" >> ~/.npmrc
           echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
       
       - name: Install Dependencies
