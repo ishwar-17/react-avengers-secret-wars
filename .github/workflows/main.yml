@@ -54,7 +54,6 @@ jobs:
         with:
           path: "package.json"
           prop_path: "version"
-          
       - run: |
           echo "PACKAGE_VERSION=${{ steps.version.outputs.prop }}" >> $GITHUB_ENV
     
