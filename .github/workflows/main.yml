@@ -169,6 +169,11 @@ jobs:
         with:
           node-version: 20.8.1
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Configure npm to use GitHub Packages
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}" > ~/.npmrc
+          echo "@ishwar-17:registry=https://npm.pkg.github.com" >> ~/.npmrc
       
       - name: Install Dependencies
         run: |
