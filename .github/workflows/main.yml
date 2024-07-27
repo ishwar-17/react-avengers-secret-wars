@@ -4,69 +4,31 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Clean workspace
-        run: sudo rm -rf $PWD/* $PWD/.[!.]*
-        
       - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20.8.1
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@ishwar-17'
+          node-version: '20.8.1'
+          registry-url: 'https://registry.npmjs.org'
       
-      - name: Configure npm for GitHub Packages
+      - name: Configure npm for npm registry
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_TOKEN }}" > ~/.npmrc
-          echo "@ishwar-17:registry=https://npm.pkg.github.com/" >> ~/.npmrc
-
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          
       - name: Install dependencies
         run: npm install
   
       - name: Build the package
         run: npm run build
   
-      - name: Publish package to GitHub Packages
-        run: npm publish --registry=https://npm.pkg.github.com/
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
-  
-      - name: Reset npm configuration
-        run: rm ~/.npmrc
-  
-      - name: Configure npm for npm registry
-        run: |
-          echo "registry=https://registry.npmjs.org/" > ~/.npmrc
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-  
       - name: Publish package to npm
-        run: npm publish --access public
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Get package version
-        id: version
-        uses: notiz-dev/github-action-json-property@release
-        with:
-          path: "package.json"
-          prop_path: "version"
-  
-      - name: Set package version to environment variable
-        run: echo "PACKAGE_VERSION=${{ steps.version.outputs.prop }}" >> $GITHUB_ENV
-    
-      - name: Create tag and release
-        uses: avakar/tag-and-release@v1
-        with:
-          tag_name: ${{ steps.version.outputs.prop }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
