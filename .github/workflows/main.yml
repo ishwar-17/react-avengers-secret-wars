@@ -52,7 +52,7 @@ jobs:
           cat ~/.npmrc  # Output the .npmrc file for debugging
   
       - name: Publish package to npm
-        run: npm publish --access public
+        run: npm publish --registry=https://registry.npmjs.org/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
 
