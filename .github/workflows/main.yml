@@ -38,6 +38,12 @@ jobs:
 
       - name: Verify .npmrc file content
         run: cat ~/.npmrc
+
+      - name: Debug environment
+        run: |
+          echo "GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}"
+          echo "NPM_TOKEN: ${{ secrets.NPM_TOKEN }}"
+          env
       
       - name: Build
         run: npm run build
