@@ -39,6 +39,8 @@ jobs:
   
       - name: Publish package to GitHub Packages
         run: npm publish --registry=https://npm.pkg.github.com/
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
   
       - name: Reset npmrc
         run: rm ~/.npmrc
@@ -50,7 +52,9 @@ jobs:
           cat ~/.npmrc  # Output the .npmrc file for debugging
   
       - name: Publish package to npm
-        run: npm publish
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
 
       - name: get version
         id: version
