@@ -24,41 +24,33 @@ jobs:
           node-version: 20.8.1
           registry-url: 'https://npm.pkg.github.com'
           scope: '@ishwar-17'
-
-      - name: Configure npm to use GitHub Packages and npm registry
+      
+      - name: Configure npm for GitHub Packages
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_TOKEN }}" > ~/.npmrc
           echo "@ishwar-17:registry=https://npm.pkg.github.com/" >> ~/.npmrc
-          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
+          cat ~/.npmrc  # Output the .npmrc file for debugging
+  
+      - name: Install dependencies
+        run: npm install
+  
+      - name: Build the package
+        run: npm run build
+  
+      - name: Publish package to GitHub Packages
+        run: npm publish
+  
+      - name: Reset npmrc
+        run: rm ~/.npmrc
+  
+      - name: Configure npm for npm registry
+        run: |
+          echo "registry=https://registry.npmjs.org/" > ~/.npmrc
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
           cat ~/.npmrc  # Output the .npmrc file for debugging
-      
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Verify .npmrc file content
-        run: cat ~/.npmrc
-
-      - name: Debug environment
-        run: |
-          echo "GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}"
-          echo "NPM_TOKEN: ${{ secrets.NPM_TOKEN }}"
-          env
-      
-      - name: Build
-        run: npm run build
-      
-      - name: Publish package to GitHub Packages
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
-        run: npm publish --registry=https://npm.pkg.github.com/
-        
-
+  
       - name: Publish package to npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --registry=https://registry.npmjs.org/
-        
+        run: npm publish
 
       - name: get version
         id: version
@@ -73,4 +65,54 @@ jobs:
         with:
           tag_name: ${{ steps.version.outputs.prop }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+
+      # - name: Configure npm to use GitHub Packages and npm registry
+      #   run: |
+      #     echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_TOKEN }}" > ~/.npmrc
+      #     echo "@ishwar-17:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+      #     echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
+      #     echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+      #     cat ~/.npmrc  # Output the .npmrc file for debugging
+      
+      # - name: Install Dependencies
+      #   run: npm ci
+
+      # - name: Verify .npmrc file content
+      #   run: cat ~/.npmrc
+
+      # - name: Debug environment
+      #   run: |
+      #     echo "GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}"
+      #     echo "NPM_TOKEN: ${{ secrets.NPM_TOKEN }}"
+      #     env
+      
+      # - name: Build
+      #   run: npm run build
+      
+      # - name: Publish package to GitHub Packages
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+      #   run: npm publish --registry=https://npm.pkg.github.com/
+        
+
+      # - name: Publish package to npm
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #   run: npm publish --registry=https://registry.npmjs.org/
+        
+
+      # - name: get version
+      #   id: version
+      #   uses: notiz-dev/github-action-json-property@release
+      #   with:
+      #     path: "package.json"
+      #     prop_path: "version"
+      # - run: |
+      #     echo "PACKAGE_VERSION=${{ steps.version.outputs.prop }}" >> $GITHUB_ENV
+    
+      # - uses: avakar/tag-and-release@v1
+      #   with:
+      #     tag_name: ${{ steps.version.outputs.prop }}
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
